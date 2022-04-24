@@ -9,7 +9,7 @@
 3. yarn / to install: npm install --global yarn (or just npm i -g yarn) you need near-cli installed globally. Here's how:
 4. npm install --global near-cli This will give you the near CLI tool. Ensure that it's installed with: near --version
 
-##Getting started
+Getting started
 1. Clone this repo to a local folder
 2. type yarn (This will install the dependencies so that we won’t have a problem related to that.)
 3. yarn build:release
