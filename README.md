@@ -17,13 +17,7 @@ Getting started
 
 ## Functions
 
-## 1.usersIntro
-This function returns users intro about themselves and their ideas.
-###  export function usersIntro(intro:string): string{
-  ### return intro;
-### }
-
-## 2.hi
+## 1.hi
 This function retruns users intro again or if intro is less than 3 then it returns the default message.
 ### export function hi(intro:string): string{
 ###  if(intro.length <= 3){
@@ -32,7 +26,7 @@ This function retruns users intro again or if intro is less than 3 then it retur
 ###  return intro;
 ### }
 
-## 3.addIdea
+## 2.addIdea
 This function allows users to adding an idea according to stated letters counts.
 ### export function addIdea(head: string, intro: string, idea: string): void{
 ###  logging.log("Head => \t" + head + "\nIntro => \t" + intro + "\nIdea => \t" + idea)
@@ -44,8 +38,8 @@ This function allows users to adding an idea according to stated letters counts.
 ###  ideas.push(listing)
 ### }
 
-## 4.findingHead
-This function looking for if the idea that is rating from users, exist or not. Or directly looking for the head is exist or not.
+## 3.findingHead
+This function looking for if the idea that is rating from users, exist or not. Or directly looking for the head is exist or not. This is using for other functions.
 ### export function findingHead(headq:string): void{
 ###  for(let i = 0; i<ideas.length; i++){
 ###    if(ideas[i].head == headq){  
@@ -54,7 +48,7 @@ This function looking for if the idea that is rating from users, exist or not. O
 ###  }
 ### }
 
-## 5. isHeadUsedBefore
+## 4. isHeadUsedBefore
 This function checks if the head that wanting to be used is used before or not.
 ### export function isHeadUsedBefore(headq: string): boolean {
 ###  for(let i = 0; i< ideas.length; i++){
@@ -66,7 +60,7 @@ This function checks if the head that wanting to be used is used before or not.
 ###  return false
 ### }
 
-## 6. rateTheIdea
+## 5. rateTheIdea
 This function allows users to rate the idea. Like or dislike.
 ### export function rateTheIdea(headq:string, vote:string): Vote{
 ###  assert(findingHead, "Head not exist.")
@@ -83,3 +77,8 @@ This function allows users to rate the idea. Like or dislike.
 ###  votes.push(voting)
 ###  return voting
 ### }  
+## How to call these functions:
+#### near call $CONTRACT hi '{"intro":"lorem ipsum"}' --accountId YOUR_ACCOUNT_ID.testnet
+#### near call $CONTRACT addIdea '{"head":"ideaPool", "intro":"lorem ipsum", "idea":"awesome idea"}' --accountId YOUR_ACCOUNT_ID.testnet
+#### near call $CONTRACT isHeadUsedBefore '{"headq":"ideaPool"}' --accountId YOUR_ACCOUNT_ID.testnet //returns true because ideaPool is used before.
+#### near call $CONTRACT rateTheIdea '{"headq":"ideaPool", "vote":"like"}' --accountId YOUR_ACCOUNT_ID.testnet
